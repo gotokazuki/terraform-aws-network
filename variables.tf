@@ -19,3 +19,8 @@ variable "create_private_subnets" {
   type        = bool
   default     = true
 }
+variable "add_eks_tags_to_subnets" {
+  description = "Whether to add EKS tags to subnets for the load balancer controller."
+  type        = bool
+  default     = false
+}

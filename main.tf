@@ -17,9 +17,11 @@ resource "aws_subnet" "public" {
   availability_zone       = data.aws_availability_zones.available.names[count.index]
   map_public_ip_on_launch = true
 
-  tags = {
+  tags = merge({
     Name = "${var.prefix}-public-${local.az_suffix[count.index]}"
-  }
+    }, var.add_eks_tags_to_subnets ? {
+    "kubernetes.io/role/elb" = 1,
+  } : {})
 }
 
 resource "aws_subnet" "private" {
@@ -29,9 +31,11 @@ resource "aws_subnet" "private" {
   cidr_block        = cidrsubnet(var.ipv4_cidr, var.ipv4_cidr_newbits, count.index + 4)
   availability_zone = data.aws_availability_zones.available.names[count.index]
 
-  tags = {
+  tags = merge({
     Name = "${var.prefix}-private-${local.az_suffix[count.index]}"
-  }
+    }, var.add_eks_tags_to_subnets ? {
+    "kubernetes.io/role/internal-elb" = 1,
+  } : {})
 }
 
 resource "aws_internet_gateway" "this" {
