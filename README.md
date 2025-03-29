@@ -41,6 +41,7 @@ No modules.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
+| <a name="input_add_eks_tags_to_subnets"></a> [add\_eks\_tags\_to\_subnets](#input\_add\_eks\_tags\_to\_subnets) | Whether to add EKS tags to subnets for the load balancer controller. | `bool` | `false` | no |
 | <a name="input_create_private_subnets"></a> [create\_private\_subnets](#input\_create\_private\_subnets) | Whether to create private subnets. | `bool` | `true` | no |
 | <a name="input_ipv4_cidr"></a> [ipv4\_cidr](#input\_ipv4\_cidr) | IPv4 CIDR block for the VPC. | `string` | n/a | yes |
 | <a name="input_ipv4_cidr_newbits"></a> [ipv4\_cidr\_newbits](#input\_ipv4\_cidr\_newbits) | Number of additional bits with which to extend the prefix. | `number` | n/a | yes |
