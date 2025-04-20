@@ -35,14 +35,19 @@ No modules.
 | [aws_subnet.private](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/subnet) | resource |
 | [aws_subnet.public](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/subnet) | resource |
 | [aws_vpc.this](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/vpc) | resource |
+| [aws_vpc_endpoint.ddb](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/vpc_endpoint) | resource |
+| [aws_vpc_endpoint.s3](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/vpc_endpoint) | resource |
 | [aws_availability_zones.available](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/availability_zones) | data source |
+| [aws_region.current](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/region) | data source |
 
 ## Inputs
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
 | <a name="input_add_eks_tags_to_subnets"></a> [add\_eks\_tags\_to\_subnets](#input\_add\_eks\_tags\_to\_subnets) | Whether to add EKS tags to subnets for the load balancer controller. | `bool` | `false` | no |
+| <a name="input_create_dynamodb_vpc_endpoint"></a> [create\_dynamodb\_vpc\_endpoint](#input\_create\_dynamodb\_vpc\_endpoint) | Whether to create DynamoDB VPC endpoint. | `bool` | `false` | no |
 | <a name="input_create_private_subnets"></a> [create\_private\_subnets](#input\_create\_private\_subnets) | Whether to create private subnets. | `bool` | `true` | no |
+| <a name="input_create_s3_vpc_endpoint"></a> [create\_s3\_vpc\_endpoint](#input\_create\_s3\_vpc\_endpoint) | Whether to create S3 VPC endpoint. | `bool` | `false` | no |
 | <a name="input_ipv4_cidr"></a> [ipv4\_cidr](#input\_ipv4\_cidr) | IPv4 CIDR block for the VPC. | `string` | n/a | yes |
 | <a name="input_ipv4_cidr_newbits"></a> [ipv4\_cidr\_newbits](#input\_ipv4\_cidr\_newbits) | Number of additional bits with which to extend the prefix. | `number` | n/a | yes |
 | <a name="input_prefix"></a> [prefix](#input\_prefix) | Name prefix for resources. | `string` | n/a | yes |

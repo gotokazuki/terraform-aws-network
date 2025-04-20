@@ -24,3 +24,14 @@ variable "add_eks_tags_to_subnets" {
   type        = bool
   default     = false
 }
+variable "create_s3_vpc_endpoint" {
+  description = "Whether to create S3 VPC endpoint."
+  type        = bool
+  default     = false
+}
+
+variable "create_dynamodb_vpc_endpoint" {
+  description = "Whether to create DynamoDB VPC endpoint."
+  type        = bool
+  default     = false
+}
